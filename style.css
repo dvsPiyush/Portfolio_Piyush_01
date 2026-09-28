@@ -1,0 +1,1146 @@
+/* ================================================================
+   GLOBAL RESET
+   ================================================================ */
+
+/*
+   Remove browser defaults and make width/height calculations easier.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/* Smooth scrolling when clicking #section links. */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Main page appearance. */
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: #111;
+
+    /* Subtle background instead of a plain white page. */
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(0, 157, 255, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(255, 0, 255, 0.08),
+            transparent 28%
+        ),
+        #f7f8fc;
+}
+
+
+/* ================================================================
+   HEADER / NAVIGATION
+   ================================================================ */
+
+/*
+   Fixed floating navigation bar.
+   width keeps it from becoming too wide on large screens.
+*/
+.header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(92%, 1100px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+    padding: 0.65rem 1rem;
+
+    color: white;
+    background: rgba(0, 0, 0, 0.82);
+
+    /* Blur the content behind the translucent header. */
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3rem;
+
+    z-index: 1000;
+}
+
+
+/* Portfolio name/logo. */
+.logo {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Slight hover enlargement. */
+.logo:hover {
+    transform: scale(1.05);
+}
+
+
+/* Navigation links arranged horizontally. */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+/* Individual navigation link. */
+.nav-links a {
+    position: relative;
+
+    padding: 0.35rem 0;
+
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+
+/* Gradient underline starts with zero width. */
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -0.15rem;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        to right,
+        #009dff,
+        #ff00ff
+    );
+
+    transition: width 0.3s ease;
+}
+
+
+/* Expand the underline on hover/focus. */
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+    width: 100%;
+}
+
+
+/* Header GitHub button. */
+.visit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.65rem 1.25rem;
+
+    border: none;
+    border-radius: 3rem;
+
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    background: linear-gradient(
+        to right,
+        #009dff,
+        #ff00ff
+    );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Header button hover. */
+.visit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Hidden on desktop; shown in the mobile media query. */
+.menu-button {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+
+
+
+/* ================================================================
+   GENERAL SECTIONS
+   ================================================================ */
+
+.section {
+    min-height: 100vh;
+    width: 100%;
+
+    /*
+       Large top padding prevents the fixed header from covering
+       the beginning of a section.
+    */
+    padding: 8rem 8% 5rem;
+
+    position: relative;
+}
+
+
+/* ================================================================
+   HERO / ABOUT
+   ================================================================ */
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Places the profile image and text beside each other. */
+.about-container {
+    width: min(1100px, 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6rem;
+}
+
+
+/* Profile image. */
+.profile-image {
+    width: clamp(220px, 24vw, 320px);
+    aspect-ratio: 1;
+
+    object-fit: cover;
+
+    border: 0.5px solid rgb(0,0,0);
+    border-radius: 50%;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Hero text container. */
+.info-box {
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    gap: 1.25rem;
+}
+
+
+/* "Hi, I'm" text. */
+.intro-text {
+    color: #555;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+/* Main name. */
+.info-box h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+
+/* Job/focus text with gradient coloring. */
+.role {
+    margin-top: 0.5rem;
+
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    font-weight: 500;
+
+    background: linear-gradient(
+        to right,
+        #ff00ff,
+        #009dff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+/* Hero description. */
+.hero-description {
+    max-width: 560px;
+
+    color: #555;
+    line-height: 1.7;
+}
+
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+
+/* Shared button appearance. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    padding: 0.75rem 1.35rem;
+
+    border: 2px solid #111;
+    border-radius: 3rem;
+
+    color: #111;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Container for multiple buttons. */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+
+/* Filled gradient button. */
+.primary-btn {
+    border-color: transparent;
+    color: white;
+
+    background: linear-gradient(
+        to right,
+        #009dff,
+        #ff00ff
+    );
+}
+
+
+/* Outline button. */
+.secondary-btn {
+    background: transparent;
+}
+
+
+/* Small upward movement on hover. */
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Dark hover state for outline buttons. */
+.secondary-btn:hover {
+    background: #111;
+    color: white;
+}
+
+
+/* Social links container. */
+.socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+
+/* Circular social icons. */
+.socials a {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #111;
+    font-size: 1.6rem;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* Social icon hover state. */
+.socials a:hover {
+    transform: translateY(-3px);
+
+    color: white;
+    background: #111;
+}
+
+
+/* ================================================================
+   SECTION TITLES
+   ================================================================ */
+
+.section-title {
+    margin-bottom: 1rem;
+
+    text-align: center;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+}
+
+
+/* ================================================================
+   SKILLS
+   ================================================================ */
+
+/* Main skills layout. */
+.experience-info {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4rem;
+}
+
+
+/* Two-column skill-card grid. */
+.grid {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+}
+
+
+/* Individual skill card. */
+.grid-card {
+    min-height: 220px;
+
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0.5rem;
+
+    border: 2px solid #111;
+    border-radius: 2rem;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Skill-card hover effect. */
+.grid-card:hover {
+    transform: translateY(-5px);
+
+    background: #111;
+    color: white;
+}
+
+
+/* Skill icon. */
+.grid-card i {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+
+/* Small category text. */
+.grid-card span {
+    font-size: 1.05rem;
+    font-weight: 500;
+
+    background: linear-gradient(
+        to right,
+        #009dff,
+        #ff00ff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+/* Skill heading. */
+.grid-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+/* Skill description. */
+.grid-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* Improve text contrast when the card is hovered. */
+.grid-card:hover p {
+    color: #ddd;
+}
+
+
+/* Supporting image. */
+.section-image {
+    width: clamp(220px, 24vw, 300px);
+    aspect-ratio: 1;
+
+    object-fit: cover;
+
+    border-radius: 2rem;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================================================================
+   SCROLLBAR
+   ================================================================ */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background: linear-gradient(
+        to bottom,
+        #009dff,
+        #ff00ff
+    );
+}
+
+
+/* ================================================================
+   PROJECTS
+   ================================================================ */
+
+/* Responsive project-card grid. */
+.projects-grid {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 1.5rem;
+}
+
+
+/* Project card. */
+.project-card {
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 1rem;
+
+    border: 2px solid #111;
+    border-radius: 2rem;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* Project-card hover effect. */
+.project-card:hover {
+    transform: translateY(-8px);
+
+    background: #111;
+    color: white;
+}
+
+
+/* Project image. */
+.project-card img {
+    width: 100%;
+    max-width: 360px;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+    border-radius: 1rem;
+}
+
+
+/* Project heading. */
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+/* Project description. */
+.project-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* Description contrast on hover. */
+.project-card:hover p {
+    color: #ddd;
+}
+
+
+/* Project buttons on a dark card. */
+.project-card:hover .secondary-btn {
+    border-color: white;
+    color: white;
+}
+
+
+/* Project button hover while the card is dark. */
+.project-card:hover .secondary-btn:hover {
+    background: white;
+    color: #111;
+}
+
+
+/* ================================================================
+   CONTACT
+   ================================================================ */
+
+/* Limits the form width and centers it. */
+.contact-box {
+    width: min(700px, 100%);
+    margin: 0 auto;
+}
+
+
+/* Text below "Contact Me". */
+.lwt {
+    margin: 0;
+
+    text-align: center;
+
+    color: #666;
+    font-size: 1.1rem;
+}
+
+
+/* Contact form layout. */
+.contact-form {
+    width: 100%;
+
+    margin-top: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.25rem;
+}
+
+
+/* One label + input group. */
+.form-field {
+    width: 100%;
+}
+
+
+/* Visible label above each field. */
+.form-field label {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: #222;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+
+/*
+   Wrapper for the input and icon.
+   position: relative allows the icon to be positioned inside it.
+*/
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Name and email inputs. */
+.input-wrapper input {
+    width: 100%;
+
+    padding: 0.95rem 1rem 0.95rem 3rem;
+
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #111;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Message textarea. */
+.input-wrapper textarea {
+    width: 100%;
+    min-height: 180px;
+
+    padding: 1rem 1rem 1rem 3rem;
+
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #111;
+
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    outline: none;
+
+    /* Vertical resizing is allowed; horizontal resizing is not. */
+    resize: vertical;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Highlight the field currently being edited. */
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+    border-color: #009dff;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 157, 255, 0.10);
+}
+
+
+/* Placeholder text. */
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+    color: #888;
+}
+
+
+/*
+   The icon is a sibling of the input.
+   Therefore we use .input-wrapper > i, NOT "input i".
+*/
+.input-wrapper > i {
+    position: absolute;
+
+    left: 1rem;
+    top: 1.05rem;
+
+    color: #555;
+    font-size: 1rem;
+
+    pointer-events: none;
+}
+
+
+/* Keep the message icon near the top of the textarea. */
+.textarea-wrapper > i {
+    top: 1.1rem;
+}
+
+
+/* Send button. */
+.submit-btn {
+    align-self: center;
+    min-width: 180px;
+}
+
+
+/* JavaScript status text. */
+.form-status {
+    min-height: 1.5rem;
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #555;
+    font-size: 0.9rem;
+}
+
+
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+
+footer {
+    width: 100%;
+    min-height: 10rem;
+
+    padding: 2rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+
+/* Footer links arranged horizontally. */
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+
+/* Footer link appearance. */
+footer ul li a {
+    color: #222;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+
+/* Footer link hover. */
+footer ul li a:hover {
+    color: #009dff;
+}
+
+
+/* Copyright text. */
+.copyright {
+    margin: 0;
+
+    color: #666;
+    font-size: 0.85rem;
+
+    text-align: center;
+}
+
+
+/* ================================================================
+   RESPONSIVE DESIGN — TABLETS
+   ================================================================ */
+
+@media (max-width: 1000px) {
+
+    /* Reduce the gap in the hero area. */
+    .about-container {
+        gap: 4rem;
+    }
+
+    /*
+       Move the supporting skills image below the cards.
+       This prevents the cards from becoming too narrow.
+    */
+    .experience-info {
+        flex-direction: column;
+    }
+
+    .section-image {
+        width: min(280px, 60vw);
+    }
+}
+
+
+/* ================================================================
+   RESPONSIVE DESIGN — MOBILE
+   ================================================================ */
+
+@media (max-width: 768px) {
+
+    /* Reduce section spacing on smaller screens. */
+    .section {
+        padding: 7rem 6% 4rem;
+    }
+
+    /* Stack the hero image and text vertically. */
+    .about-container {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .profile-image {
+        width: min(65vw, 280px);
+    }
+
+    /* Hide the desktop GitHub button. */
+    .visit-btn {
+        display: none;
+    }
+
+    /* Show the hamburger menu. */
+    .menu-button {
+        display: block;
+    }
+
+    /*
+       Mobile navigation is hidden until JavaScript
+       adds the "active" class.
+    */
+    .nav-links {
+        position: absolute;
+
+        top: calc(100% + 0.75rem);
+        left: 0;
+
+        width: 100%;
+
+        padding: 1rem;
+
+        display: none;
+        flex-direction: column;
+
+        gap: 0.25rem;
+
+        background: rgba(0, 0, 0, 0.95);
+
+        border-radius: 1.5rem;
+    }
+
+    /* Show mobile navigation when JavaScript adds .active. */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.75rem;
+    }
+
+    /* One skill card per row on mobile. */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Allow button groups to fit narrow screens. */
+    .btn-group {
+        width: 100%;
+    }
+
+    .btn {
+        flex: 1;
+    }
+}
+
+
+/* ================================================================
+   RESPONSIVE DESIGN — VERY SMALL SCREENS
+   ================================================================ */
+
+@media (max-width: 480px) {
+
+    .header {
+        width: calc(100% - 1.5rem);
+
+        top: 0.75rem;
+
+        padding: 0.6rem 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .profile-image {
+        width: 70vw;
+    }
+
+    /* Stack the hero buttons. */
+    .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Keep the Send Message button compact. */
+    .submit-btn {
+        width: auto;
+        align-self: center;
+    }
+
+    footer ul {
+        gap: 1rem;
+    }
+}
+
+/* ================================================================
+   NEW: ACTIVE NAV LINK (set by script.js while scrolling)
+   ================================================================ */
+
+.nav-links a.current::after {
+    width: 100%;
+}
+
+
+/* ================================================================
+   NEW: FORM VALIDATION STATES
+   ================================================================ */
+
+/* Red border on an invalid field. */
+.input-wrapper input.invalid,
+.input-wrapper textarea.invalid {
+    border-color: #e5484d;
+    box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.12);
+}
+
+/* Small error message under a field (created by script.js). */
+.field-error {
+    margin-top: 0.4rem;
+
+    color: #e5484d;
+    font-size: 0.85rem;
+}
+
+/* Status message colours. */
+.form-status.success {
+    color: #1a9d55;
+}
+
+.form-status.error {
+    color: #e5484d;
+}
+
+/* Disabled submit button while sending. */
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ================================================================
+   NEW: KEYBOARD FOCUS + REDUCED MOTION
+   ================================================================ */
+
+/* Clear focus ring for keyboard users. */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #009dff;
+    outline-offset: 3px;
+}
+
+/* Respect users who turn animations off in their OS settings. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

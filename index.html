@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding used by this page. -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on phones, tablets and desktops. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser-tab title. -->
+    <title>Piyush Sharma | Portfolio</title>
+
+    <!-- Poppins font used throughout the portfolio. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome icons. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Main stylesheet. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER / NAVIGATION ==================== -->
+    <header class="header">
+
+        <!-- Logo links back to the hero section. -->
+        <a href="#about" class="logo" aria-label="Go to home section">PIYUSH</a>
+
+        <!-- Main navigation. -->
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- JavaScript opens/closes this menu on small screens. -->
+        <button
+            class="menu-button"
+            id="menu-icon"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <!-- Replace this with your actual GitHub profile URL. -->
+        <a
+            class="visit-btn"
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >Visit GitHub</a>
+
+    </header>
+
+
+    <main>
+
+        <!-- ==================== ABOUT / HERO ==================== -->
+        <section id="about" class="about section">
+
+            <div class="about-container">
+
+                <!-- Replace image.png with your preferred profile image. -->
+                <img
+                    class="profile-image"
+                    src="image.png"
+                    alt="Portrait of Piyush Sharma"
+                >
+
+                <div class="info-box">
+
+                    <div class="text">
+                        <p class="intro-text">Hi, I'm</p>
+                        <h1>Piyush Sharma</h1>
+
+                        <!-- Keep this title accurate to your current level. -->
+                        <p class="role">Developer</p>
+                    </div>
+
+                    <p class="hero-description">
+                        I build web experiences while developing my skills in modern web development.
+                    </p>
+
+                    <div class="btn-group">
+
+                        <!-- Add your real resume PDF to the project folder. -->
+                        <a class="btn primary-btn" href="resume.pdf" download>
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                            Download Resume
+                        </a>
+
+                        <!-- Scrolls to the contact section. -->
+                        <a class="btn secondary-btn" href="#contact">
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                    <!-- Replace these with your real profile URLs. -->
+                    <div class="socials" aria-label="Social links">
+
+                        <a
+                            href="https://github.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <i class="fa-brands fa-github fa-spin"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <i class="fa-brands fa-x-twitter fa-bounce"></i>
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <i class="fa-brands fa-linkedin fa-spin fa-spin-reverse"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+<hr>
+
+        <!-- ==================== SKILLS ==================== -->
+        <section id="experience" class="experience section">
+
+            <h2 class="section-title">Skills &amp; Focus</h2>
+
+            <div class="experience-info">
+
+                <div class="grid">
+
+                    <!-- Frontend skills. -->
+                    <article class="grid-card">
+                        <i class="fa-solid fa-code fa-flip" aria-hidden="true"></i>
+                        <span>Frontend</span>
+                        <h3>HTML, CSS &amp; JavaScript</h3>
+                        <p>
+                            Building responsive layouts, interactive interfaces
+                            and accessible web pages.
+                        </p>
+                    </article>
+
+                    <!-- Backend skills. -->
+                    <article class="grid-card">
+                        <i class="fa-brands fa-python fa-spin" aria-hidden="true"></i>
+                        <span>Backend</span>
+                        <h3>Python &amp; Django</h3>
+                        <p>
+                            Developing backend applications and learning how
+                            frontend and backend systems work together.
+                        </p>
+                    </article>
+
+                    <!-- Database skills. -->
+                    <article class="grid-card">
+                        <i class="fa-solid fa-database fa-bounce" aria-hidden="true"></i>
+                        <span>Database</span>
+                        <h3>SQL</h3>
+                        <p>
+                            Working with relational databases, queries,
+                            filtering, joins and data-driven applications.
+                        </p>
+                    </article>
+
+                    <!-- Current learning area. -->
+                    <article class="grid-card">
+                        <i class="fa-solid fa-layer-group fa-beat" aria-hidden="true"></i>
+                        <span>Learning</span>
+                        <h3>DSA &amp; Problem Solving</h3>
+                        <p>
+                            Strengthening programming fundamentals, data
+                            structures and algorithmic thinking.
+                        </p>
+                    </article>
+
+                </div>
+
+                <!-- Supporting image. Remove this if you do not want it. -->
+                <img
+                    class="section-image"
+                    src="image1.png"
+                    alt="Portrait of Piyush Sharma"
+                    loading="lazy"
+                >
+
+            </div>
+        </section>
+
+        <hr>
+        <!-- ==================== PROJECTS ==================== -->
+        <section id="projects" class="projects section">
+
+            <h2 class="section-title">Projects</h2>
+
+            <div class="projects-grid">
+
+                <!-- Replace this placeholder with your first real project. -->
+                <article class="project-card">
+                    <img
+                        src="Project1.png"
+                        alt="Screenshot of Project X"
+                        loading="lazy"
+                    >
+                    <h3>Project X</h3>
+                    <p>
+                        Replace this description with the problem,
+                        technologies used and your contribution.
+                    </p>
+
+                    <div class="btn-group">
+                        <!-- Replace # with the deployed project URL. -->
+                        <a class="btn secondary-btn" href="#">Live Demo</a>
+
+                        <!-- Replace # with the GitHub repository URL. -->
+                        <a class="btn secondary-btn" href="#">GitHub Repo</a>
+                    </div>
+                </article>
+
+
+                <!-- Replace this placeholder with your second real project. -->
+                <article class="project-card">
+                    <img
+                        src="Project2.png"
+                        alt="Screenshot of Project Y"
+                        loading="lazy"
+                    >
+                    <h3>Project Y</h3>
+                    <p>
+                        Replace this description with the problem,
+                        technologies used and your contribution.
+                    </p>
+
+                    <div class="btn-group">
+                        <a class="btn secondary-btn" href="#">Live Demo</a>
+                        <a class="btn secondary-btn" href="#">GitHub Repo</a>
+                    </div>
+                </article>
+
+
+                <!-- Replace this placeholder with your third real project. -->
+                <article class="project-card">
+                    <img
+                        src="Project3.png"
+                        alt="Screenshot of Project Z"
+                        loading="lazy"
+                    >
+                    <h3>Project Z</h3>
+                    <p>
+                        Replace this description with the problem,
+                        technologies used and your contribution.
+                    </p>
+
+                    <div class="btn-group">
+                        <a class="btn secondary-btn" href="#">Live Demo</a>
+                        <a class="btn secondary-btn" href="#">GitHub Repo</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+        <hr>
+
+        <!-- ==================== CONTACT ==================== -->
+        <section id="contact" class="contact section">
+
+            <div class="contact-box">
+
+                <h2 class="section-title">Contact Me</h2>
+
+                <p class="lwt"><mark>Let's work together...</mark></p>
+
+                <!--
+                    Frontend-only form for now.
+                    A backend/email service is needed to actually receive messages.
+                -->
+                <form id="contact-form" class="contact-form">
+
+                    <!-- Name field. -->
+                    <div class="form-field">
+                        <label for="name">Your Name</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                placeholder="Your Name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <!-- Email field. -->
+                    <div class="form-field">
+                        <label for="email">Email ID</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="your@email.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <!-- Message field. -->
+                    <div class="form-field">
+                        <label for="message">Your Message</label>
+
+                        <div class="input-wrapper textarea-wrapper">
+                            <i class="fa-solid fa-message" aria-hidden="true"></i>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Write your message here..."
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+
+
+                    <!-- Submit button. -->
+                    <button
+                        class="btn primary-btn submit-btn"
+                        type="submit"
+                    >
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                        Send Message
+                    </button>
+
+
+                    <!-- JavaScript writes the result here. -->
+                    <p
+                        id="form-status"
+                        class="form-status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <p class="copyright">
+            &copy; 2026 Piyush Sharma | All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript is loaded after the HTML elements exist. -->
+    <script src="script.js"></script>
+
+</body>
+</html>
