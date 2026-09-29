@@ -55,7 +55,7 @@ body {
 */
 .header {
     position: fixed;
-    top: 1rem;
+    top: 0rem;
     left: 50%;
     transform: translateX(-50%);
 
@@ -69,13 +69,13 @@ body {
     padding: 0.65rem 1rem;
 
     color: white;
-    background: rgba(0, 0, 0, 0.82);
+    background: rgba(0, 0, 0, 0.5);
 
     /* Blur the content behind the translucent header. */
     backdrop-filter: blur(10px);
 
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 3rem;
+    border-radius: 1rem;
 
     z-index: 1000;
 }

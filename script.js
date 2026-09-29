@@ -97,7 +97,7 @@ const statusText = document.querySelector("#form-status");
 const submitButton = form.querySelector(".submit-btn");
 
 // Simple email pattern: something@something.something
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;gi
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Show an error under a field.
 function showError(input, message) {
